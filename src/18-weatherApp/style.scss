@@ -1,0 +1,230 @@
+body {
+  .bienvenido{
+    font-family: monospace;
+    font-size: 80px;
+    margin-top: 15%;
+    text-shadow: 2px 2px rgba(86, 86, 122, 0.5);
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    background-color: transparent;
+    box-shadow: 1px 1px 17px 0px;
+    .input {
+      height: 4vh;
+      input{
+        border-radius: 10px;
+        padding-left: 5%;
+        box-shadow: 1px 1px 17px 0px;
+      }
+      button{
+        border-radius: 10px;
+        box-shadow: 1px 1px 17px 0px;
+      }
+      ::placeholder{
+        padding-left: 5%;
+      }
+    }
+    .nombre {
+      margin-left: 70%;
+      font-size: 60px;
+      text-shadow: 2px 2px rgba(86, 86, 122, 0.5);
+    }
+  }
+  .fondo {
+    width: 100%;
+  }
+
+  .dia {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 0.3))
+      ),
+      url("./assets/icons/dia2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250vh;
+  }
+  .noche {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 0.5))
+      ),
+      url("./assets/icons/noche.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  .lupa {
+    width: 20px;
+  }
+
+  .cajon1 {
+    margin: 2em auto;
+    padding-top: 5px;
+    background-color: rgba(255, 255, 255, 0.199);
+    box-shadow: 1px 1px 15px 0px;
+    width: 50%;
+    border-radius: 8px;
+    margin-top: 50px !important;
+    padding-bottom: 15px;
+    margin-bottom: 80px !important;
+    .grados {
+      font-size: 40px;
+    }
+    .icon {
+      width: 100px;
+    }
+    .modo {
+      font-size: 25px;
+    }
+  }
+  .box-time {
+    .hour {
+      font-size: 80px;
+      font-weight: 300;
+      margin: 15px 0 0 0;
+      text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+    }
+    .date {
+      margin: -12px 0 0 0;
+      font-size: 20px;
+    }
+  }
+  .week {
+    display: flex;
+    width: 70.4vw;
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.199);
+    box-shadow: 1px 1px 15px 0px;
+    border-radius: 8px;
+    margin-bottom: 80px;
+    .box-week-detail {
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+      display: block;
+      border-right: 1px solid rgba(255, 255, 255, 0.377);
+      margin: 2rem 0;
+      .pDay {
+        font-size: 25px;
+      }
+      .iconosTiempo2 {
+        margin-bottom: 1rem;
+      }
+      .box-humidity {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 10rem;
+        font-size: 18px;
+        line-height: 2;
+        .humidity {
+          margin-right: 5px;
+          width: 25px;
+          filter: invert(100%);
+        }
+        .humidity2 {
+          margin-left: -30px;
+        }
+        .humidity3 {
+          margin-right: 9px;
+        }
+        .tempMaxMix {
+          margin-right: 13px;
+        }
+      }
+    }
+  }
+  .box-details-sun {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 70px;
+    .box-details-sun2 {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .sunrise {
+        width: 30%;
+      }
+     
+    }
+     .line{
+        border: 1px solid rgba(255, 255, 255, 0.199);
+        box-shadow: 1px 1px 17px 0px;
+        height: 20vh;
+      }
+  }
+
+
+
+// --------------------Móvil------------------
+
+@media (max-width: 700px){
+  .bienvenido{
+    font-size: 45px !important;
+    margin-top: 38% !important;
+  }
+  .nav{
+    padding-bottom: 30px;
+  }
+  .input{
+    margin-left: 75px !important;
+    margin-top: 10px !important;
+  }
+  .nombre{
+    margin-left: 75px !important;
+  }
+  .box-time{
+    margin-right: 30px !important;
+  }
+  .cajon1{
+    width: 77% !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    margin-left: 47px !important;
+    margin-top: 40px !important;
+    margin-bottom: 66px !important;
+  }
+  .box-details-sun{
+    .sunrise{
+      width: 86% !important;
+    }
+    span{
+      margin: 10px;
+    }
+  }
+  .week{
+    width: 77% !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin-right: 44px;
+  }
+  canvas{
+    width: 380px !important;
+  }
+}
+
+
+}
+
+
+

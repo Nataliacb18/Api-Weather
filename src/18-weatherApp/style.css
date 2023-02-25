@@ -1,0 +1,137 @@
+body .nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  background-color: transparent;
+  box-shadow: 0 0 10px 8px rgb(174, 174, 207);
+}
+body .nav .input {
+  height: 4vh;
+  border-radius: 50px;
+}
+body .nav .nombre {
+  margin-left: 70%;
+  font-size: 60px;
+}
+body .fondo {
+  width: 100%;
+}
+body .dia {
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3))), url("./assets/icons/dia1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .noche {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url("./assets/icons/noche.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body .lupa {
+  width: 20px;
+}
+body .cajon1 {
+  margin: 2em auto;
+  padding-top: 5px;
+  background-color: rgba(255, 255, 255, 0.199);
+  box-shadow: 1px 1px 15px 0px;
+  width: 50%;
+  border-radius: 8px;
+  margin-top: 20px !important;
+  padding-bottom: 15px;
+  margin-bottom: 80px !important;
+}
+body .cajon1 .grados {
+  font-size: 40px;
+}
+body .cajon1 .icon {
+  width: 100px;
+}
+body .cajon1 .modo {
+  font-size: 25px;
+}
+body .box-time .hour {
+  font-size: 80px;
+  font-weight: 300;
+  margin: 15px 0 0 0;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+body .box-time .date {
+  margin: -12px 0 0 0;
+  font-size: 20px;
+}
+body .week {
+  display: flex;
+  width: 70.4vw;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.199);
+  box-shadow: 1px 1px 15px 0px;
+  border-radius: 8px;
+}
+body .week .box-week-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  display: block;
+  border-right: 1px solid rgba(255, 255, 255, 0.377);
+  margin: 2rem 0;
+}
+body .week .box-week-detail .pDay {
+  font-size: 25px;
+}
+body .week .box-week-detail .iconosTiempo2 {
+  margin-bottom: 1rem;
+}
+body .week .box-week-detail .box-humidity {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 10rem;
+  font-size: 18px;
+  line-height: 2;
+}
+body .week .box-week-detail .box-humidity .humidity {
+  margin-right: 5px;
+  width: 25px;
+  filter: invert(100%);
+}
+body .week .box-week-detail .box-humidity .humidity2 {
+  margin-left: -30px;
+}
+body .week .box-week-detail .box-humidity .humidity3 {
+  margin-right: 9px;
+}
+body .week .box-week-detail .box-humidity .tempMaxMix {
+  margin-right: 13px;
+}
+body .box-details-sun {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 70px;
+}
+body .box-details-sun .box-details-sun2 {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .box-details-sun .box-details-sun2 .sunrise {
+  width: 30%;
+}
+body .box-details-sun .line {
+  border: 1px solid rgba(255, 255, 255, 0.199);
+  box-shadow: 1px 1px 17px 0px;
+  height: 20vh;
+}/*# sourceMappingURL=style.css.map */
