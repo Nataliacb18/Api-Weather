@@ -48,11 +48,11 @@ body {
         left bottom,
         from(rgba(0, 0, 0, 0.3))
       ),
-      url("./assets/icons/dia2.jpg");
+      url("./assets/icons/bg-dia.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 250vh;
+    min-height: 100vh !important;
   }
   .noche {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
@@ -122,6 +122,10 @@ body {
       display: block;
       border-right: 1px solid rgba(255, 255, 255, 0.377);
       margin: 2rem 0;
+       cursor: pointer;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.418);
+      }
       .pDay {
         font-size: 25px;
       }
@@ -140,8 +144,11 @@ body {
           width: 25px;
           filter: invert(100%);
         }
+        .humidity1{
+          margin-left: 22px;
+        }
         .humidity2 {
-          margin-left: -30px;
+          margin-left: -35px;
         }
         .humidity3 {
           margin-right: 9px;

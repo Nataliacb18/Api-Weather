@@ -1,25 +1,28 @@
+import React, { useState } from "react";
 import axios from "axios";
 
-// carpeta services
-import { API } from "./apiKeys";
-import React, { useEffect, useState } from "react";
-import { Prinpipal } from "./components/Prinpipal";
-import { DiasSemana } from "./components/DiasSemana";
-import { Grafica } from "./components/Grafica";
-import "./style.scss";
 import moment from "moment-timezone";
-import lupa from "./assets/icons/lupa.png";
+
 import { translate, translateMes } from "./helpers/translate";
 import { icons } from "./helpers/icons";
+import { API } from "./apiKeys";
+
+import { DiasSemana } from "./components/DiasSemana";
+import { Grafica } from "./components/Grafica";
+import { Bienvenido } from "./components/Bienvenido";
+
+import lupa from "./assets/icons/lupa.png";
 import sunrise from "./assets/icons/sunrise.svg";
 import sunset from "./assets/icons/sunset.svg";
-import { Bienvenido } from "./components/Bienvenido";
+
+import "./style.scss";
 
 export const WeatherApp = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(true);
+  const [select, setSelect] = useState(0);
 
   const handleSubmit = () => {
     axios
@@ -33,7 +36,6 @@ export const WeatherApp = () => {
       });
   };
 
-  console.log(weather);
   return (
     <>
       <div
@@ -67,34 +69,36 @@ export const WeatherApp = () => {
             <div>
               <div className="box-time">
                 <p className="hour">{moment().format("HH:mm")}</p>
-                <p className="date">{translateMes(weather.list[0].dt)}</p>
+                <p className="date">{translateMes(weather.list[select].dt)}</p>
               </div>
             </div>
             <div className="cajon1 m-auto">
               <div className="">
                 <div className="d-flex justify-content-center pt-3">
                   <p className="grados pt-4 pe-3">
-                    {Math.round(weather.list[0].temp.day - 273.15) + " ºC"}
+                    {Math.round(weather.list[select].temp.day - 273.15) + " ºC"}
                   </p>
                   <img
                     className="icon"
-                    src={icons(weather.list[0].weather[0].icon)}
+                    src={icons(weather.list[select].weather[0].icon)}
                   />
                 </div>
                 <div className="d-flex justify-content-center pt-4">
                   <p className="pe-5">
                     Mínima:{" "}
-                    {(weather.list[0].temp.morn - 273.15).toFixed(1) + " ºC"}
+                    {(weather.list[select].temp.morn - 273.15).toFixed(1) +
+                      " ºC"}
                   </p>
                   <p>
                     Máxima:{" "}
-                    {(weather.list[0].temp.night - 273.15).toFixed(1) + " ºC"}
+                    {(weather.list[select].temp.night - 273.15).toFixed(1) +
+                      " ºC"}
                   </p>
                 </div>
                 <div>
                   <p className="modo">
                     {" "}
-                    {translate(weather.list[0].weather[0].description)}
+                    {translate(weather.list[select].weather[0].description)}
                   </p>
                 </div>
               </div>
@@ -103,13 +107,13 @@ export const WeatherApp = () => {
               <div className="box-details-sun2">
                 <img className="sunrise" src={sunrise} alt="sunrise" />
                 <span className="sunriseAM">
-                  {moment.unix(weather.list[0].sunrise).format("HH:mm")} AM
+                  {moment.unix(weather.list[select].sunrise).format("HH:mm")} AM
                 </span>
               </div>
               <div className="line"></div>
               <div className="box-details-sun2">
                 <span>
-                  {moment.unix(weather.list[0].sunset).format("HH:mm")} PM
+                  {moment.unix(weather.list[select].sunset).format("HH:mm")} PM
                 </span>
                 <img className="sunrise" src={sunset} alt="sunset" />
               </div>
@@ -117,8 +121,11 @@ export const WeatherApp = () => {
           </div>
         )}
 
-        <Prinpipal weather={weather} />
-        <DiasSemana weather={weather} />
+        <DiasSemana
+          weather={weather}
+          setWeather={setWeather}
+          setSelect={setSelect}
+        />
         {show && <Grafica weather={weather} />}
       </div>
     </>
