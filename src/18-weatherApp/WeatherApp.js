@@ -24,17 +24,21 @@ export const WeatherApp = () => {
   const [show2, setShow2] = useState(true);
   const [select, setSelect] = useState(0);
 
-  const handleSubmit = () => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},es&appid=${API.key}&limit=10`
-      )
-      .then((res) => {
-        setWeather(res.data);
-        setShow(true);
-        setShow2(false);
-        setCity("")
-      });
+  const handleSubmit = (e) => {
+    if (e.key === "Enter") {
+    if (city !== "") {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city},es&appid=${API.key}&limit=10`
+        )
+        .then((res) => {
+          setWeather(res.data);
+          setShow(true);
+          setShow2(false);
+          setCity("");
+        });
+    }
+  }
   };
 
   return (
@@ -58,6 +62,7 @@ export const WeatherApp = () => {
               placeholder="Introduce ciudad"
               onChange={(e) => setCity(e.target.value)}
               value={city}
+              onKeyPress={handleSubmit}
             />
             <button onClick={handleSubmit}>
               <img className="lupa" src={lupa} />
