@@ -9,6 +9,8 @@ export const translate = (description) => {
     return "Cielo despejado";
   } else if (description === "light rain") {
     return "Lluvia ligera";
+  } else if (description === "overcast clouds"){
+    return "Nublado"
   }
 };
 

@@ -33,6 +33,7 @@ export const WeatherApp = () => {
         setWeather(res.data);
         setShow(true);
         setShow2(false);
+        setCity("")
       });
   };
 
